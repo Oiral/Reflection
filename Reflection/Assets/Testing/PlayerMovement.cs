@@ -10,37 +10,24 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            MoveTile(Direction.North);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            MoveTile(Direction.South);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            MoveTile(Direction.West);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            MoveTile(Direction.East);
-        }
-
-        transform.position = Vector3.Lerp(transform.position, targetTile.transform.position, 0.1f);
+        Vector3 targetPos = targetTile.transform.position;
+        transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
 
     }
 
-    void MoveTile(Direction dir)
+    public bool MovePlayer(Direction dir)
     {
-        foreach(GameObject tile in targetTile.GetComponent<TileScript>().connections)
+        foreach (GameObject tile in targetTile.GetComponent<TileConnectionsScript>().connections)
         {
-            if (CheckDirection(targetTile.transform.position,tile.transform.position) == dir)
+            if (CheckDirection(targetTile.transform.position, tile.transform.position) == dir)
             {
                 targetTile = tile;
-                break;
+                return true;
             }
+            
+
         }
+        return false;
     }
 
     private Direction CheckDirection(Vector3 startingPos, Vector3 checkingPos)
