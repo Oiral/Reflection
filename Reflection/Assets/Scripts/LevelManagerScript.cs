@@ -44,4 +44,15 @@ public class LevelManagerScript : MonoBehaviour {
         //SceneManager.UnloadSceneAsync(currentLevel - 1);
 
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Debug.Log("<color=red>Quit Game</color>");
+        Application.Quit();
+    }
 }
