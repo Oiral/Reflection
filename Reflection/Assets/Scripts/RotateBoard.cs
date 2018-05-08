@@ -10,15 +10,11 @@ public class RotateBoard : MonoBehaviour {
     [Range(10, 50)]
     public float framesOfRotation = 10;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
+    }
 
     public void BeginRotation()
     {
@@ -36,10 +32,14 @@ public class RotateBoard : MonoBehaviour {
         {
             print("Rotating");
             transform.Rotate(rotationValue, 0, 0);
+            //transform.Rotate(new Vector3(1, 0, 1), rotationValue);
             accumulatedRotation += rotationValue;
             yield return new WaitForEndOfFrame();
         }
+
         transform.Rotate(180 - accumulatedRotation, 0, 0);
+        //transform.Rotate(new Vector3(1, 0, 1), 180 - accumulatedRotation);
+
         yield return new WaitForEndOfFrame();
         print("End rotation");
     }

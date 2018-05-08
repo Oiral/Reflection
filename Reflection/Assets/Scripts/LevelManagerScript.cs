@@ -9,6 +9,8 @@ public class LevelManagerScript : MonoBehaviour {
 
     public static LevelManagerScript instance;
 
+    public float waitTime = 1f;
+
     private void Start()
     {
         if (instance == null)
@@ -25,6 +27,21 @@ public class LevelManagerScript : MonoBehaviour {
     public void NextLevel()
     {
         Debug.Log("Scene loading");
-        SceneManager.LoadScene(currentLevel += 1);
+        StartCoroutine(WaitForNextLevel());
+    }
+
+    IEnumerator WaitForNextLevel()
+    {
+        yield return new WaitForSeconds(waitTime);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentLevel += 1);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        //Reaches this point when its loaded
+        //SceneManager.UnloadSceneAsync(currentLevel - 1);
+
     }
 }

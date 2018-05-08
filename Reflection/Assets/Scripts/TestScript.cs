@@ -31,6 +31,7 @@ public class TestScript : MonoBehaviour {
                 Vector3 boxPos = new Vector3(x, 0, z);
                 GameObject tile = Instantiate(boxPrefab, boxPos, Quaternion.identity, transform);
                 tiles[x, z] = tile;
+                tile.name = "Cube (" + x + "," + z + ")";
             }
         }
         for (int x = 0; x < xAmount; x++)
