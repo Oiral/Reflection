@@ -13,34 +13,34 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (selectedMoveScript.MovePlayer(Direction.North))
+            if (selectedMoveScript.MovePlayer(Direction.North,true))
             {
                 //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.North);
+                otherMoveScript.MovePlayer(Direction.North, false);
             }
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (selectedMoveScript.MovePlayer(Direction.South))
+            if (selectedMoveScript.MovePlayer(Direction.South, true))
             {
                 //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.South);
+                otherMoveScript.MovePlayer(Direction.South, false);
             }
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (selectedMoveScript.MovePlayer(Direction.West))
+            if (selectedMoveScript.MovePlayer(Direction.West, true))
             {
                 //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.West);
+                otherMoveScript.MovePlayer(Direction.West, false);
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (selectedMoveScript.MovePlayer(Direction.East))
+            if (selectedMoveScript.MovePlayer(Direction.East, true))
             {
                 //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.East);
+                otherMoveScript.MovePlayer(Direction.East, false);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))

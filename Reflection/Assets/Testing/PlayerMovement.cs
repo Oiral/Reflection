@@ -7,6 +7,14 @@ public enum Direction { North, East, South, West };
 public class PlayerMovement : MonoBehaviour {
 
     public GameObject targetTile;
+    GameObject startingTile;
+    public float respawnTime = 1;
+    public GameObject otherPlayer;
+
+    private void Start()
+    {
+        startingTile = targetTile;
+    }
 
     private void Update()
     {
@@ -15,17 +23,38 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
-    public bool MovePlayer(Direction dir)
+    public bool MovePlayer(Direction dir,bool primary)
     {
         foreach (GameObject tile in targetTile.GetComponent<TileConnectionsScript>().connections)
         {
             if (CheckDirection(targetTile.transform.position, tile.transform.position) == dir)
             {
-                targetTile = tile;
-                return true;
+                switch (tile.GetComponentInParent<TileScript>().Type)
+                {
+                    case TileType.Default:
+                        targetTile = tile;
+                        return true;
+                    case TileType.Hole:
+                        StartCoroutine(Respawn());
+                        targetTile = tile;
+                        return true;
+                    case TileType.Goal:
+                        if (targetTile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && primary)
+                        {
+                            targetTile = tile;
+                            LevelManagerScript.instance.NextLevel();
+                            return true;
+                        }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
+                        {
+                            targetTile = tile;
+                            return true;
+                        }
+                        else
+                            return false;
+                    default:
+                        return false;
+                }
             }
-            
-
         }
         return false;
     }
@@ -54,5 +83,10 @@ public class PlayerMovement : MonoBehaviour {
             
     }
 
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        targetTile = startingTile;    
+    }
 
 }
