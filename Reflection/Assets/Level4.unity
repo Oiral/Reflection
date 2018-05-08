@@ -3411,7 +3411,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1575485559}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.00000058114523}
-  m_LocalPosition: {x: 0, y: -1, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1133717696}
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865b5f76c7d091946ad7ac5f5c6780e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTile: {fileID: 1247404743}
+  targetTile: {fileID: 1475687677}
   respawnTime: 1
   otherPlayer: {fileID: 1534101137}
 --- !u!23 &1575485562
@@ -4131,9 +4131,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - {fileID: 65358976}
-  - {fileID: 847069854}
   - {fileID: 916658160}
   - {fileID: 1664523146}
+  - {fileID: 847069854}
 --- !u!4 &1706568841
 Transform:
   m_ObjectHideFlags: 0
