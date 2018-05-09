@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class RotateBoard : MonoBehaviour {
 
+    public Vector3 targetPos = new Vector3(0,0,0);
+
     public Button rotateButton;
     public float waitTime = 1;
     [Range(10, 50)]
@@ -50,5 +52,10 @@ public class RotateBoard : MonoBehaviour {
         rotateButton.interactable = false;
         yield return new WaitForSeconds(1.5f);
         rotateButton.interactable = true;
+    }
+
+    private void Update()
+    {
+        transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
     }
 }

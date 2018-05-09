@@ -9,7 +9,7 @@ public class LevelManagerScript : MonoBehaviour {
 
     public static LevelManagerScript instance;
 
-    public float waitTime = 1f;
+    public float waitTime = 0.7f;
 
     private void Start()
     {
@@ -32,6 +32,13 @@ public class LevelManagerScript : MonoBehaviour {
 
     IEnumerator WaitForNextLevel()
     {
+        //FindBoard
+        if (GameObject.FindGameObjectWithTag("Board") != null)
+        {
+            RotateBoard board = GameObject.FindGameObjectWithTag("Board").GetComponent<RotateBoard>();
+            board.targetPos = new Vector3(0, -5, 0);
+        }
+
         yield return new WaitForSeconds(waitTime);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentLevel += 1);
 
