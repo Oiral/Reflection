@@ -1409,13 +1409,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultTileCostumes:
-  - {fileID: 1471917988491262, guid: cca931ef7e9b55a4fb7da53cf1a0b3f7, type: 2}
-  - {fileID: 1851664453783954, guid: 955498d024ec25c4bb4f61db1e08d5ce, type: 2}
-  HoleTileCostumes: []
-  WallCostumes: []
-  BlockTileCostumes: []
+  - {fileID: 1620721792682690, guid: 8474272a53287754c851cf5b5b26d006, type: 2}
+  - {fileID: 1691753744121156, guid: aa29bd30e2dcc0446931b0563fe3d2d9, type: 2}
+  - {fileID: 1616444912298892, guid: db2d4ca1fb09f874bbdcac57880c71cd, type: 2}
+  HoleTileCostumes:
+  - {fileID: 1629292519667072, guid: a98743525b34b17489158b19e7d9dc43, type: 2}
+  WallCostumes:
+  - {fileID: 1105541972635506, guid: 605105fb8f74e7f4395e483b3e88b9fd, type: 2}
+  - {fileID: 1432699616374364, guid: 8aae26f2440ab1c438c7b90825ccdb82, type: 2}
+  BlockTileCostumes:
+  - {fileID: 1289682085204864, guid: c589a62953e1f9b4d9a486b57f4a6d92, type: 2}
+  - {fileID: 1612817357379534, guid: 3d9a367586a9fe2488d72e6a73c60861, type: 2}
+  - {fileID: 1191962511919290, guid: 561d55d42c08bed4b9b7407a1b0cb905, type: 2}
+  - {fileID: 1895278513603090, guid: 7ca16f988f96b894591f0aa8e8e2ae94, type: 2}
+  - {fileID: 1255530568314336, guid: 325d4a590dab64d4c8a63bcb5fee2ec9, type: 2}
   GoalTileCostumes:
-  - {fileID: 1471917988491262, guid: cca931ef7e9b55a4fb7da53cf1a0b3f7, type: 2}
+  - {fileID: 1063878034323320, guid: 563ba2e9219754144b4f6cf9204d653c, type: 2}
 --- !u!114 &422545307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3408,7 +3417,7 @@ RectTransform:
   m_GameObject: {fileID: 1530060247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.0029216935, y: 0.0029216935, z: 0.0029216935}
+  m_LocalScale: {x: 0.0025660011, y: 0.0025660011, z: 0.0025660011}
   m_Children:
   - {fileID: 415467387}
   - {fileID: 393133605}
