@@ -64,4 +64,9 @@ public class LevelManagerScript : MonoBehaviour {
         Debug.Log("<color=red>Quit Game</color>");
         Application.Quit();
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(currentLevel);
+    }
 }

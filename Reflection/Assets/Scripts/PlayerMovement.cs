@@ -32,21 +32,21 @@ public class PlayerMovement : MonoBehaviour {
                 switch (tile.GetComponentInParent<TileScript>().Type)
                 {
                     case TileType.Default:
-                        targetTile = tile;
+                        MovePlayer(tile);
                         return true;
                     case TileType.Hole:
                         StartCoroutine(Respawn());
-                        targetTile = tile;
+                        MovePlayer(tile);
                         return true;
                     case TileType.Goal:
                         if (targetTile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && primary)
                         {
-                            targetTile = tile;
+                            MovePlayer(tile);
                             LevelManagerScript.instance.NextLevel();
                             return true;
                         }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
                         {
-                            targetTile = tile;
+                            MovePlayer(tile);
                             return true;
                         }
                         else
@@ -58,6 +58,40 @@ public class PlayerMovement : MonoBehaviour {
         }
         return false;
     }
+    
+    void MovePlayer(GameObject tile)
+    {
+        targetTile = tile;
+
+        //Set rotation of player
+
+        /*
+        Vector3 lookPos = targetTile.transform.position - transform.position;
+        lookPos.y = 0;
+
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+
+        Vector3 myRotation = transform.rotation.eulerAngles;
+        myRotation.x = 0;
+        myRotation.z = 0;
+
+        transform.rotation = rotation * Quaternion.Euler(myRotation);
+        */
+
+        Vector3 lookPos = targetTile.transform.position - transform.position;
+        lookPos.y = 0;
+
+        Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
+
+        if (BoardRotation != Quaternion.identity)
+        {
+            BoardRotation.eulerAngles = new Vector3(180, 180, 0);
+        }
+
+        Quaternion rotation = Quaternion.LookRotation(lookPos) * BoardRotation;
+        transform.rotation = rotation;
+    }
+
 
     private Direction CheckDirection(Vector3 startingPos, Vector3 checkingPos)
     {
