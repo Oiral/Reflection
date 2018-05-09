@@ -56,7 +56,6 @@ public class MainMenuController : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         menuTransform.localPosition = newPos;
-
     }
 
     void ChangeIndex(int inc)
