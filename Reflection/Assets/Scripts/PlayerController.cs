@@ -11,15 +11,15 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (selectedMoveScript.MovePlayer(Direction.North,true))
-            {
-                //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.North, false);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.S))
+		if (Input.GetButtonDown("Up"))
+		{
+			if (selectedMoveScript.MovePlayer(Direction.North,true))
+			{
+				//Debug.Log("Move Other Player");
+				otherMoveScript.MovePlayer(Direction.North, false);
+			}
+		}
+		if (Input.GetButtonDown("Down"))
         {
             if (selectedMoveScript.MovePlayer(Direction.South, true))
             {
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
                 otherMoveScript.MovePlayer(Direction.South, false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetButtonDown("Left"))
         {
             if (selectedMoveScript.MovePlayer(Direction.West, true))
             {
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
                 otherMoveScript.MovePlayer(Direction.West, false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+		if (Input.GetButtonDown("Right"))
         {
             if (selectedMoveScript.MovePlayer(Direction.East, true))
             {
