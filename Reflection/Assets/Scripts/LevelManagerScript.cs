@@ -32,6 +32,7 @@ public class LevelManagerScript : MonoBehaviour {
 
     IEnumerator WaitForNextLevel()
     {
+        yield return new WaitForSeconds(waitTime/2);
         //FindBoard
         if (GameObject.FindGameObjectWithTag("Board") != null)
         {
@@ -39,7 +40,8 @@ public class LevelManagerScript : MonoBehaviour {
             board.targetPos = new Vector3(0, -5, 0);
         }
 
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime / 2);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentLevel += 1);
 
         // Wait until the asynchronous scene fully loads
