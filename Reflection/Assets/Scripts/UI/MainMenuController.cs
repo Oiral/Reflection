@@ -73,4 +73,10 @@ public class MainMenuController : MonoBehaviour {
             MoveMenu();
         }
     }
+
+    public void ResetMenu()
+    {
+        currentIndex = 0;
+        menu.GetComponent<RectTransform>().localPosition = originalMenuPosition;
+    }
 }
