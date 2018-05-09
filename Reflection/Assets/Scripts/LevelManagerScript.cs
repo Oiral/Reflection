@@ -27,6 +27,10 @@ public class LevelManagerScript : MonoBehaviour {
     public void NextLevel()
     {
         Debug.Log("Scene loading");
+
+        UIScript.instance.SetMainMenu(false);
+        UIScript.instance.SetPauseMenu(false);
+
         StartCoroutine(WaitForNextLevel());
     }
 
@@ -51,12 +55,19 @@ public class LevelManagerScript : MonoBehaviour {
         }
         //Reaches this point when its loaded
         //SceneManager.UnloadSceneAsync(currentLevel - 1);
-
+        if (currentLevel == SceneManager.sceneCountInBuildSettings)
+        {
+            UIScript.instance.SetWinMenu(true);
+        }
     }
 
     public void LoadMainMenu()
     {
+        currentLevel = 0;
         SceneManager.LoadScene(0);
+        UIScript.instance.SetMainMenu(true);
+        UIScript.instance.SetPauseMenu(false);
+        UIScript.instance.SetWinMenu(false);
     }
 
     public void Quit()
@@ -68,5 +79,6 @@ public class LevelManagerScript : MonoBehaviour {
     public void Restart()
     {
         SceneManager.LoadScene(currentLevel);
+        UIScript.instance.SetPauseMenu(false);
     }
 }

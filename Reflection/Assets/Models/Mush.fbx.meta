@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: c57aa514168b9914990d545ac39bf6b3
+timeCreated: 1525902545
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: FlowerRing
+    100002: Flowers
+    100004: Flowers1
+    100006: Flowers2
+    100008: Flowers3
+    100010: FlowerSquare5
+    100012: FlowerSquare5 1
+    100014: //RootNode
+    100016: Mushroom
+    100018: Mushroom4
+    100020: pCube4
+    100022: polySurface10
+    100024: polySurface15
+    100026: polySurface9
+    100028: polySurface9 1
+    100030: pSphere4
+    100032: pSphere4 1
+    100034: pSphere4 2
+    100036: pSphere4 3
+    100038: pSphere5
+    100040: pSphere5 1
+    100042: pSphere5 2
+    100044: pSphere5 3
+    100046: pSphere6
+    100048: pSphere6 1
+    100050: pSphere6 2
+    100052: pSphere6 3
+    100054: pSphere7
+    100056: pSphere7 1
+    100058: pSphere7 2
+    100060: pSphere7 3
+    100062: transform214
+    100064: transform250
+    100066: transform251
+    100068: transform252
+    100070: transform253
+    100072: transform5
+    100074: transform6
+    100076: transform83
+    100078: transform84
+    100080: transform85
+    100082: transform86
+    100084: transform87
+    100086: transform88
+    100088: transform89
+    100090: transform90
+    100092: transform91
+    100094: transform92
+    100096: transform93
+    100098: transform94
+    100100: transform95
+    100102: transform96
+    100104: transform97
+    100106: transform98
+    400000: FlowerRing
+    400002: Flowers
+    400004: Flowers1
+    400006: Flowers2
+    400008: Flowers3
+    400010: FlowerSquare5
+    400012: FlowerSquare5 1
+    400014: //RootNode
+    400016: Mushroom
+    400018: Mushroom4
+    400020: pCube4
+    400022: polySurface10
+    400024: polySurface15
+    400026: polySurface9
+    400028: polySurface9 1
+    400030: pSphere4
+    400032: pSphere4 1
+    400034: pSphere4 2
+    400036: pSphere4 3
+    400038: pSphere5
+    400040: pSphere5 1
+    400042: pSphere5 2
+    400044: pSphere5 3
+    400046: pSphere6
+    400048: pSphere6 1
+    400050: pSphere6 2
+    400052: pSphere6 3
+    400054: pSphere7
+    400056: pSphere7 1
+    400058: pSphere7 2
+    400060: pSphere7 3
+    400062: transform214
+    400064: transform250
+    400066: transform251
+    400068: transform252
+    400070: transform253
+    400072: transform5
+    400074: transform6
+    400076: transform83
+    400078: transform84
+    400080: transform85
+    400082: transform86
+    400084: transform87
+    400086: transform88
+    400088: transform89
+    400090: transform90
+    400092: transform91
+    400094: transform92
+    400096: transform93
+    400098: transform94
+    400100: transform95
+    400102: transform96
+    400104: transform97
+    400106: transform98
+    2300000: polySurface9
+    3300000: polySurface9
+    4300000: polySurface9
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 669d4ec93df4bb94cbc8ad972e7dc8c5, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

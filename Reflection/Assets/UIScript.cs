@@ -24,9 +24,8 @@ public class UIScript : MonoBehaviour {
 	}
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.Escape)){
+		if (Input.GetKeyDown(KeyCode.Escape) && (!mainMenu || !winMenu)){
 			Debug.Log ("Pause");
-			mainMenu = false;
 			pauseMenu = !pauseMenu;
 
 			UpdateMenuUI();
@@ -38,6 +37,24 @@ public class UIScript : MonoBehaviour {
 		pauseMenuPanel.SetActive (pauseMenu);
 		//winMenuPanel.SetActive (winMenu);
 	}
+
+    public void SetMainMenu(bool toggle)
+    {
+        mainMenu = toggle;
+        UpdateMenuUI();
+    }
+
+    public void SetPauseMenu(bool toggle)
+    {
+        pauseMenu = toggle;
+        UpdateMenuUI();
+    }
+
+    public void SetWinMenu(bool toggle)
+    {
+        winMenu = toggle;
+        UpdateMenuUI();
+    }
 
 
 }
