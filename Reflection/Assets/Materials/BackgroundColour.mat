@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BackgroundColour
-  m_Shader: {fileID: 4800000, guid: 3caf0f3bbd50bde4787b4a6f0a97c0f1, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0332ca0108e650943ac8c5ae8e125cb3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -70,6 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SaturationIntensity: -0.615
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -77,6 +78,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0, g: 0, b: 0, a: 1}
-    - _Colour2: {r: 1, g: 0.20588237, b: 0.20588237, a: 1}
+    - _Colour: {r: 0.22576058, g: 0, b: 0.61764705, a: 1}
+    - _Colour2: {r: 1, g: 0.47586206, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
