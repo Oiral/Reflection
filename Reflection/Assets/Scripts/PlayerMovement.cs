@@ -98,14 +98,12 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 lookPos = targetTile.transform.position - transform.position;
         lookPos.y = 0;
 
-        Vector3 eulerAngleRotOffset = new Vector3();
+        //Vector3 eulerAngleRotOffset = new Vector3();
 
         Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
 
-        if (BoardRotation != Quaternion.identity)
-        {
-            eulerAngleRotOffset = new Vector3(180, 180, 0);
-        }
+        Vector3 eulerAngleRotOffset = new Vector3(BoardRotation.eulerAngles.z, BoardRotation.eulerAngles.y, BoardRotation.eulerAngles.x);
+
 
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         rotation = Quaternion.Euler(rotation.eulerAngles + eulerAngleRotOffset);
