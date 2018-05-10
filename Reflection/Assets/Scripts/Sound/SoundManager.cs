@@ -28,8 +28,8 @@ public class SoundManager : MonoBehaviour {
         soundDicitionary = new Dictionary<string, AudioClip>();
         foreach (SoundObject soundObj in soundsList)
         {
-            //Don't play sound if it doesn't exist
-            soundDicitionary[soundObj.name] = soundObj.audioClip;
+            if(soundDicitionary.ContainsKey(soundObj.name))
+            { soundDicitionary[soundObj.name] = soundObj.audioClip; }
         }
 	}
 	
