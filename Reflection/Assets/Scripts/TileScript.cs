@@ -12,7 +12,7 @@ public class TileScript : MonoBehaviour {
 
     private void Start()
     {
-        PickCostume();
+        //PickCostume();
     }
 
     void PickCostume()

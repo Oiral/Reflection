@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         Quaternion rotation = Quaternion.LookRotation(lookPos) * BoardRotation;
-        transform.rotation = rotation;
+        //transform.rotation = rotation;
     }
 
 
