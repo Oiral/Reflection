@@ -98,10 +98,9 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 lookPos = targetTile.transform.position - transform.position;
         lookPos.y = 0;
 
-        //Vector3 eulerAngleRotOffset = new Vector3();
-
         Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
 
+        //Holy Jesus Rotation Magic
         Vector3 eulerAngleRotOffset = new Vector3(BoardRotation.eulerAngles.z, BoardRotation.eulerAngles.y, BoardRotation.eulerAngles.x);
 
 
