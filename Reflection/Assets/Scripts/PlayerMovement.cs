@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public Animator turtleAnimator;
 
+    bool canMove = true;
+
     private void Start()
     {
         startingTile = targetTile;
