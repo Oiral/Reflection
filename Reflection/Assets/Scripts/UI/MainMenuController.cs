@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour {
 
-    
+    public GameObject topMenuPanel;
     public GameObject menu;
     public float scrollOffset;
     [Range(1,100)]
@@ -29,6 +29,10 @@ public class MainMenuController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             EvalInput(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ConfirmSelection(topMenuPanel.name);
         }
         print(currentIndex);
 	}
@@ -78,5 +82,54 @@ public class MainMenuController : MonoBehaviour {
     {
         currentIndex = 0;
         menu.GetComponent<RectTransform>().localPosition = originalMenuPosition;
+    }
+
+    void ConfirmSelection(string objectName)
+    {
+        if (objectName == "Win Menu Panel")
+        {
+            WinMenuAction();
+        }
+        else if (objectName == "Main Menu Panel")
+        {
+            MainMenuAction();
+        }
+        else if (objectName == "Pause Menu Panel")
+        {
+            PauseMenuAction();
+        }
+        print(objectName);
+
+    }
+
+    void WinMenuAction()
+    {
+        LevelManagerScript.instance.LoadMainMenu();
+    }
+    void MainMenuAction()
+    {
+        if (currentIndex == 2)
+        {
+            LevelManagerScript.instance.Quit();
+        }
+        else if (currentIndex == 1)
+        {
+            LevelManagerScript.instance.NextLevel();
+        }
+    }
+    void PauseMenuAction()
+    {
+        if (currentIndex == 2)
+        {
+            LevelManagerScript.instance.LoadMainMenu();
+        }
+        else if (currentIndex == 1)
+        {
+            LevelManagerScript.instance.Restart();
+        }
+        else
+        {
+            topMenuPanel.SetActive(false);
+        }
     }
 }
