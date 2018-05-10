@@ -413,10 +413,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9ff36f58b4b34469e97cd5dc899b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 422545308}
   soundsList:
-  - name: 
-    audioClip: {fileID: 0}
+  - name: walkSummer
+    audioClip: {fileID: 8300000, guid: 11ffeebba5ac1574dbca37a24dbca532, type: 3}
+  - name: walkWinter
+    audioClip: {fileID: 8300000, guid: 604e2478f7a98ad4ca4fa6c8bf45ec26, type: 3}
+  - name: win
+    audioClip: {fileID: 8300000, guid: 619d9ffcd272f964299e51dec261a833, type: 3}
+  - name: uiSelect
+    audioClip: {fileID: 8300000, guid: 123d61984bad1514381462ce2e67ea79, type: 3}
+  - name: uiPress
+    audioClip: {fileID: 8300000, guid: 597eb3b7f2f2bdf409160e7865593ef5, type: 3}
+  - name: holeFall
+    audioClip: {fileID: 8300000, guid: 9c064ffbc07aba544b0b2416f241fa38, type: 3}
+  audioVolume: 1
 --- !u!1 &285582537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1418,7 @@ GameObject:
   - component: {fileID: 422545304}
   - component: {fileID: 422545306}
   - component: {fileID: 422545307}
+  - component: {fileID: 422545308}
   m_Layer: 0
   m_Name: GM
   m_TagString: GameController
@@ -1481,6 +1493,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07a6a48ffe95540818e417aa887499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &422545308
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422545303}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &440394104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,7 +3623,7 @@ RectTransform:
   m_GameObject: {fileID: 1530060247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.0029216935, y: 0.0029216935, z: 0.0029216935}
+  m_LocalScale: {x: 0.002566001, y: 0.002566001, z: 0.002566001}
   m_Children:
   - {fileID: 415467387}
   - {fileID: 393133605}
@@ -3800,7 +3892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934492884
 Transform:
   m_ObjectHideFlags: 0

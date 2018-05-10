@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour {
                             Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
                             //Play the win Animation
                             turtleAnimator.SetTrigger("Win");
+                            SoundManager.instance.PlaySound("win");
                             LevelManagerScript.instance.NextLevel();
                             return true;
                         }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour {
                             Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
                             //Play the win Animation
                             turtleAnimator.SetTrigger("Win");
+                            SoundManager.instance.PlaySound("win");
                             return true;
                         }
                         else
@@ -117,6 +119,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //Play the animation
         turtleAnimator.SetTrigger("Move");
+        SoundManager.instance.PlaySound("walkSummer");
     }
 
 
@@ -150,6 +153,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //Spawn respawn Particle
         Instantiate(splashPrefab, targetTile.transform.position, transform.rotation, null);
+        SoundManager.instance.PlaySound("holeFall");
 
         yield return new WaitForSeconds(respawnTime);
         targetTile = startingTile;

@@ -22,11 +22,11 @@ public class MainMenuController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetButtonDown("Up"))
         {
             EvalInput(-1);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetButtonDown("Down"))
         {
             EvalInput(1);
         }
@@ -43,6 +43,7 @@ public class MainMenuController : MonoBehaviour {
         Vector3 newMenuPos = originalMenuPosition + new Vector3(0, scrollOffset * currentIndex);
         menu.GetComponent<RectTransform>().localPosition = originalMenuPosition + new Vector3(0, scrollOffset * currentIndex);
         StartCoroutine(AnimateMenu(currentMenuPos, newMenuPos));
+        SoundManager.instance.PlaySound("uiSelect");
     }
 
     IEnumerator AnimateMenu(Vector3 oldPos, Vector3 newPos)
@@ -86,6 +87,7 @@ public class MainMenuController : MonoBehaviour {
 
     void ConfirmSelection(string objectName)
     {
+        SoundManager.instance.PlaySound("uiPress");
         if (objectName == "Win Menu Panel")
         {
             WinMenuAction();
