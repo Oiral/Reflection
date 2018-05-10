@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject otherPlayer;
 
     public GameObject splashPrefab;
+    public GameObject winParticlePrefab;
 
     private void Start()
     {
@@ -44,11 +45,13 @@ public class PlayerMovement : MonoBehaviour {
                         if (targetTile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && primary)
                         {
                             MovePlayer(tile);
+                            Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
                             LevelManagerScript.instance.NextLevel();
                             return true;
                         }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
                         {
                             MovePlayer(tile);
+                            Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
                             return true;
                         }
                         else

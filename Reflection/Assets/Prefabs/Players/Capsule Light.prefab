@@ -357,9 +357,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTile: {fileID: 0}
-  respawnTime: 1
+  respawnTime: 2
   otherPlayer: {fileID: 0}
   splashPrefab: {fileID: 1426125783554966, guid: cff625e0f3f5ea143959961671b4985b,
+    type: 2}
+  winParticlePrefab: {fileID: 1904396655500636, guid: 09509bb5fe3b2194392a8a3de8613ec3,
     type: 2}
 --- !u!136 &136113154160034806
 CapsuleCollider:
@@ -431,7 +433,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -1116494694
