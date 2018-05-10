@@ -14,9 +14,12 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject splashPrefab;
     public GameObject winParticlePrefab;
 
+    public Animator turtleAnimator;
+
     private void Start()
     {
         startingTile = targetTile;
+        turtleAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -46,12 +49,16 @@ public class PlayerMovement : MonoBehaviour {
                         {
                             MovePlayer(tile);
                             Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
+                            //Play the win Animation
+                            turtleAnimator.SetTrigger("Win");
                             LevelManagerScript.instance.NextLevel();
                             return true;
                         }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
                         {
                             MovePlayer(tile);
                             Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
+                            //Play the win Animation
+                            turtleAnimator.SetTrigger("Win");
                             return true;
                         }
                         else
@@ -107,6 +114,9 @@ public class PlayerMovement : MonoBehaviour {
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         rotation = Quaternion.Euler(rotation.eulerAngles + eulerAngleRotOffset);
         transform.rotation = rotation;
+
+        //Play the animation
+        turtleAnimator.SetTrigger("Move");
     }
 
 
