@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPoint: {fileID: 261015420}
   bottomPoint: {fileID: 715431706}
-  Type: 1
+  Type: 3
 --- !u!65 &290304120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3776,7 +3776,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 669d4ec93df4bb94cbc8ad972e7dc8c5, type: 2}
+  - {fileID: 2100000, guid: 07d9fbb35a5d9bf41838b87f3513f4ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4010,7 +4010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPoint: {fileID: 2088451699}
   bottomPoint: {fileID: 255227696}
-  Type: 1
+  Type: 3
 --- !u!65 &1106932518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPoint: {fileID: 1594520335}
   bottomPoint: {fileID: 964382745}
-  Type: 1
+  Type: 3
 --- !u!65 &1541547747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5425,7 +5425,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 669d4ec93df4bb94cbc8ad972e7dc8c5, type: 2}
+  - {fileID: 2100000, guid: 07d9fbb35a5d9bf41838b87f3513f4ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5938,7 +5938,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 669d4ec93df4bb94cbc8ad972e7dc8c5, type: 2}
+  - {fileID: 2100000, guid: 07d9fbb35a5d9bf41838b87f3513f4ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
