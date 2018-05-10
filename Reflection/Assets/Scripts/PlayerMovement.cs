@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour {
         transform.rotation = rotation * Quaternion.Euler(myRotation);
         */
 
-        Vector3 lookPos = targetTile.transform.position - transform.position;
+        /*Vector3 lookPos = targetTile.transform.position - transform.position;
         lookPos.y = 0;
 
         Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
@@ -94,7 +94,22 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         Quaternion rotation = Quaternion.LookRotation(lookPos) * BoardRotation;
-        //transform.rotation = rotation;
+        //transform.rotation = rotation;*/
+        Vector3 lookPos = targetTile.transform.position - transform.position;
+        lookPos.y = 0;
+
+        Vector3 eulerAngleRotOffset = new Vector3();
+
+        Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
+
+        if (BoardRotation != Quaternion.identity)
+        {
+            eulerAngleRotOffset = new Vector3(180, 180, 0);
+        }
+
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        rotation = Quaternion.Euler(rotation.eulerAngles + eulerAngleRotOffset);
+        transform.rotation = rotation;
     }
 
 
