@@ -70,7 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SaturationIntensity: -0.615
+    - _SaturationIntensity: -0.851
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -79,5 +79,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Colour: {r: 0.22576058, g: 0, b: 0.61764705, a: 1}
-    - _Colour2: {r: 1, g: 0.47586206, b: 0, a: 1}
+    - _Colour2: {r: 0.17733562, g: 0.58823526, b: 0.3161914, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
