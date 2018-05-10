@@ -35,7 +35,7 @@ public class UIScript : MonoBehaviour {
 	public void UpdateMenuUI(){
 		mainMenuPanel.SetActive (mainMenu);
 		pauseMenuPanel.SetActive (pauseMenu);
-		//winMenuPanel.SetActive (winMenu);
+		winMenuPanel.SetActive (winMenu);
 	}
 
     public void SetMainMenu(bool toggle)

@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject targetTile;
     GameObject startingTile;
-    public float respawnTime = 1;
+    public float respawnTime = 2;
     public GameObject otherPlayer;
+
+    public GameObject splashPrefab;
 
     private void Start()
     {
@@ -119,8 +121,13 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(0.2f);
+
+        //Spawn respawn Particle
+        Instantiate(splashPrefab, targetTile.transform.position, transform.rotation, null);
+
         yield return new WaitForSeconds(respawnTime);
-        targetTile = startingTile;    
+        targetTile = startingTile;
     }
 
 }
