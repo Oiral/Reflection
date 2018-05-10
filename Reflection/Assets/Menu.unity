@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1422,7 +1422,6 @@ MonoBehaviour:
   - {fileID: 1612817357379534, guid: 3d9a367586a9fe2488d72e6a73c60861, type: 2}
   - {fileID: 1191962511919290, guid: 561d55d42c08bed4b9b7407a1b0cb905, type: 2}
   - {fileID: 1895278513603090, guid: 7ca16f988f96b894591f0aa8e8e2ae94, type: 2}
-  - {fileID: 1255530568314336, guid: 325d4a590dab64d4c8a63bcb5fee2ec9, type: 2}
   GoalTileCostumes:
   - {fileID: 1063878034323320, guid: 563ba2e9219754144b4f6cf9204d653c, type: 2}
 --- !u!114 &422545307
@@ -3417,7 +3416,7 @@ RectTransform:
   m_GameObject: {fileID: 1530060247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.0025668277, y: 0.0025668277, z: 0.0025668277}
+  m_LocalScale: {x: 0.0025660011, y: 0.0025660011, z: 0.0025660011}
   m_Children:
   - {fileID: 415467387}
   - {fileID: 393133605}
