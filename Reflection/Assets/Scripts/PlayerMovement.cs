@@ -8,12 +8,18 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject targetTile;
     GameObject startingTile;
-    public float respawnTime = 1;
+    public float respawnTime = 2;
     public GameObject otherPlayer;
+
+    public GameObject splashPrefab;
+    public GameObject winParticlePrefab;
+
+    public Animator turtleAnimator;
 
     private void Start()
     {
         startingTile = targetTile;
+        turtleAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -42,11 +48,17 @@ public class PlayerMovement : MonoBehaviour {
                         if (targetTile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && primary)
                         {
                             MovePlayer(tile);
+                            Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
+                            //Play the win Animation
+                            turtleAnimator.SetTrigger("Win");
                             LevelManagerScript.instance.NextLevel();
                             return true;
                         }else if (tile.gameObject.transform.parent == otherPlayer.GetComponent<PlayerMovement>().targetTile.gameObject.transform.parent && !primary)
                         {
                             MovePlayer(tile);
+                            Instantiate(winParticlePrefab, targetTile.transform.position, targetTile.transform.rotation, null);
+                            //Play the win Animation
+                            turtleAnimator.SetTrigger("Win");
                             return true;
                         }
                         else
@@ -78,7 +90,7 @@ public class PlayerMovement : MonoBehaviour {
         transform.rotation = rotation * Quaternion.Euler(myRotation);
         */
 
-        Vector3 lookPos = targetTile.transform.position - transform.position;
+        /*Vector3 lookPos = targetTile.transform.position - transform.position;
         lookPos.y = 0;
 
         Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
@@ -89,7 +101,22 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         Quaternion rotation = Quaternion.LookRotation(lookPos) * BoardRotation;
+        //transform.rotation = rotation;*/
+        Vector3 lookPos = targetTile.transform.position - transform.position;
+        lookPos.y = 0;
+
+        Quaternion BoardRotation = GameObject.FindGameObjectWithTag("Board").transform.rotation;
+
+        //Holy Jesus Rotation Magic
+        Vector3 eulerAngleRotOffset = new Vector3(BoardRotation.eulerAngles.z, BoardRotation.eulerAngles.y, BoardRotation.eulerAngles.x);
+
+
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        rotation = Quaternion.Euler(rotation.eulerAngles + eulerAngleRotOffset);
         transform.rotation = rotation;
+
+        //Play the animation
+        turtleAnimator.SetTrigger("Move");
     }
 
 
@@ -119,8 +146,13 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(0.2f);
+
+        //Spawn respawn Particle
+        Instantiate(splashPrefab, targetTile.transform.position, transform.rotation, null);
+
         yield return new WaitForSeconds(respawnTime);
-        targetTile = startingTile;    
+        targetTile = startingTile;
     }
 
 }

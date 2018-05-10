@@ -31,12 +31,22 @@ public class LevelManagerScript : MonoBehaviour {
         UIScript.instance.SetMainMenu(false);
         UIScript.instance.SetPauseMenu(false);
 
-        StartCoroutine(WaitForNextLevel());
+        if (currentLevel == 0)
+        {
+            SceneManager.LoadScene(currentLevel += 1);
+        }else
+        {
+            StartCoroutine(WaitForNextLevel());
+        }
+
+        
     }
 
     IEnumerator WaitForNextLevel()
     {
-        yield return new WaitForSeconds(waitTime/2);
+        yield return new WaitForSeconds(waitTime / 4);
+        yield return new WaitForSeconds(waitTime / 4);
+        yield return new WaitForSeconds(waitTime / 4);
         //FindBoard
         if (GameObject.FindGameObjectWithTag("Board") != null)
         {
@@ -44,7 +54,7 @@ public class LevelManagerScript : MonoBehaviour {
             board.targetPos = new Vector3(0, -5, 0);
         }
 
-        yield return new WaitForSeconds(waitTime / 2);
+        yield return new WaitForSeconds(waitTime / 4);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentLevel += 1);
 
