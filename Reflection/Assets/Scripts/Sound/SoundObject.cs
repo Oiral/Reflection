@@ -7,6 +7,6 @@ public class SoundObject{
 
     public string name;
     public AudioClip audioClip;
-    [Range(1,100)]
-    public float volume;
+    //[Range(1,100)]
+    //public float volume;
 }
