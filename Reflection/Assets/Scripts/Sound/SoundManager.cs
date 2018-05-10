@@ -10,6 +10,9 @@ public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
 
+    [Range(0,1)]
+    public float audioVolume = 1;
+
     Dictionary<string, AudioClip> soundDicitionary;
     // Use this for initialization
     private void Awake()
@@ -28,8 +31,8 @@ public class SoundManager : MonoBehaviour {
         soundDicitionary = new Dictionary<string, AudioClip>();
         foreach (SoundObject soundObj in soundsList)
         {
-            if(soundDicitionary.ContainsKey(soundObj.name))
-            { soundDicitionary[soundObj.name] = soundObj.audioClip; }
+            //if(soundDicitionary.ContainsKey(soundObj.name))
+             soundDicitionary[soundObj.name] = soundObj.audioClip; 
         }
 	}
 	
@@ -38,9 +41,9 @@ public class SoundManager : MonoBehaviour {
 		
 	}
 
-    void PlaySound(string name)
+    public void PlaySound(string name)
     {
         AudioClip audioClip = soundDicitionary[name];
-        audioPlayer.PlayOneShot(audioClip);
+        audioPlayer.PlayOneShot(audioClip, audioVolume);
     }
 }
