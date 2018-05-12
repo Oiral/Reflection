@@ -61,6 +61,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DayNight: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -78,6 +79,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0.22576058, g: 0, b: 0.61764705, a: 1}
-    - _Colour2: {r: 0.17733562, g: 0.58823526, b: 0.3161914, a: 1}
+    - _Colour: {r: 0.12310768, g: 0.17733398, b: 0.72794116, a: 1}
+    - _Colour2: {r: 1, g: 0.59999996, b: 0, a: 1}
+    - _ColourDay: {r: 1, g: 0.5172413, b: 0, a: 1}
+    - _ColourNight: {r: 0.02432953, g: 0.107855454, b: 0.66176474, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -118,6 +118,11 @@ public class MainMenuController : MonoBehaviour {
         {
             LevelManagerScript.instance.NextLevel();
         }
+        else
+        {
+            //Move menu to start when press confirm on title(Remove if unnecessary)
+            EvalInput(1);
+        }
     }
     void PauseMenuAction()
     {
