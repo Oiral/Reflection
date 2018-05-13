@@ -3589,7 +3589,7 @@ RectTransform:
   m_GameObject: {fileID: 1530060247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.0029216935, y: 0.0029216935, z: 0.0029216935}
+  m_LocalScale: {x: 0.002566001, y: 0.002566001, z: 0.002566001}
   m_Children:
   - {fileID: 415467387}
   - {fileID: 393133605}
@@ -3889,7 +3889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 422545304}
-        m_MethodName: NextLevel
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

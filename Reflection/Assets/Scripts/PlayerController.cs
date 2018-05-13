@@ -13,35 +13,19 @@ public class PlayerController : MonoBehaviour {
     void Update () {
 		if (Input.GetButtonDown("Up"))
 		{
-			if (selectedMoveScript.MovePlayer(Direction.North,true))
-			{
-				//Debug.Log("Move Other Player");
-				otherMoveScript.MovePlayer(Direction.North, false);
-			}
-		}
+            Move(Direction.North);
+        }
 		if (Input.GetButtonDown("Down"))
         {
-            if (selectedMoveScript.MovePlayer(Direction.South, true))
-            {
-                //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.South, false);
-            }
+            Move(Direction.South);
         }
 		if (Input.GetButtonDown("Left"))
         {
-            if (selectedMoveScript.MovePlayer(Direction.West, true))
-            {
-                //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.West, false);
-            }
+            Move(Direction.West);
         }
 		if (Input.GetButtonDown("Right"))
         {
-            if (selectedMoveScript.MovePlayer(Direction.East, true))
-            {
-                //Debug.Log("Move Other Player");
-                otherMoveScript.MovePlayer(Direction.East, false);
-            }
+            Move(Direction.East);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -49,6 +33,34 @@ public class PlayerController : MonoBehaviour {
             //FlipSelected();
         }
     }
+
+    public void Move(Direction dir)
+    {
+        if (selectedMoveScript.MovePlayer(dir, true))
+        {
+            //Debug.Log("Move Other Player");
+            otherMoveScript.MovePlayer(dir, false);
+        }
+    }
+    public void TouchInputs(string dir)
+    {
+        switch (dir)
+        {
+            case "North":
+                Move(Direction.North);
+                break;
+            case "South":
+                Move(Direction.South);
+                break;
+            case "East":
+                Move(Direction.East);
+                break;
+            case "West":
+                Move(Direction.West);
+                break;
+        }
+    }
+
     void FlipSelected()
     {
         PlayerMovement temp = selectedMoveScript;
