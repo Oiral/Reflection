@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            selectedMoveScript.DisableMovementInputOnRotation(rotateScript.waitTime + rotateScript.framesOfRotation * 0.02f);
             rotateScript.BeginRotation();
             //FlipSelected();
         }

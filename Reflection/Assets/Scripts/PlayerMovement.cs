@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (CheckDirection(targetTile.transform.position, tile.transform.position) == dir)
             {
-                canMove = false;
+                DisableMovementInput(0.23f);
                 switch (tile.GetComponentInParent<TileScript>().Type)
                 {
                     case TileType.Default:
@@ -166,4 +166,20 @@ public class PlayerMovement : MonoBehaviour {
         targetTile = startingTile;
     }
 
+    public void DisableMovementInputOnRotation(float time)
+    {
+        DisableMovementInput(time);
+    }
+
+    void DisableMovementInput(float time)
+    {
+        canMove = false;
+        StartCoroutine(ReenableMovement(time));
+    }
+
+    IEnumerator ReenableMovement(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canMove = true;
+    }
 }
