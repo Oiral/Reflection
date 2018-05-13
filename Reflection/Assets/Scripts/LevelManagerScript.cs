@@ -65,7 +65,7 @@ public class LevelManagerScript : MonoBehaviour {
         }
         //Reaches this point when its loaded
         //SceneManager.UnloadSceneAsync(currentLevel - 1);
-        if (currentLevel == SceneManager.sceneCountInBuildSettings)
+        if (currentLevel == SceneManager.sceneCountInBuildSettings-1)
         {
             UIScript.instance.SetWinMenu(true);
         }
