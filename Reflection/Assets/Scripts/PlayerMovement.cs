@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public Animator turtleAnimator;
 
-    bool canMove = true;
+    public bool canMove = true;
 
     private void Start()
     {
@@ -33,10 +33,15 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool MovePlayer(Direction dir,bool primary)
     {
+        if (!canMove)
+        {
+            return false;
+        }
         foreach (GameObject tile in targetTile.GetComponent<TileConnectionsScript>().connections)
         {
             if (CheckDirection(targetTile.transform.position, tile.transform.position) == dir)
             {
+                canMove = false;
                 switch (tile.GetComponentInParent<TileScript>().Type)
                 {
                     case TileType.Default:
