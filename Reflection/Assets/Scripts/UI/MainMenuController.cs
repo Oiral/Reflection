@@ -30,7 +30,7 @@ public class MainMenuController : MonoBehaviour {
         {
             EvalInput(1);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Submit"))
         {
             ConfirmSelection(topMenuPanel.name);
         }
