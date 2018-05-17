@@ -1693,6 +1693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738919972}
   - component: {fileID: 738919971}
+  - component: {fileID: 738919973}
   m_Layer: 0
   m_Name: Board
   m_TagString: Board
@@ -1756,6 +1757,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738919973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738919970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: Level8
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 1
 --- !u!1 &784829142
 GameObject:
   m_ObjectHideFlags: 0

@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 138678820}
   - component: {fileID: 138678819}
   - component: {fileID: 138678821}
+  - component: {fileID: 138678822}
   m_Layer: 0
   m_Name: Board
   m_TagString: Board
@@ -397,6 +398,21 @@ MonoBehaviour:
   m_TrackableProperty:
     m_Fields: []
   m_Trigger: 0
+--- !u!114 &138678822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138678818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: Level1
+  m_TrackableProperty:
+    m_Fields: []
+  m_Trigger: 1
 --- !u!1 &146901278
 GameObject:
   m_ObjectHideFlags: 0
