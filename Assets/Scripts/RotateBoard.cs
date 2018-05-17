@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class RotateBoard : MonoBehaviour {
 
@@ -29,6 +31,7 @@ public class RotateBoard : MonoBehaviour {
     public void BeginRotation()
     {
         print("StartedRotation");
+        Analytics.CustomEvent("Level " + SceneManager.GetActiveScene() + " Flip");
         StartCoroutine(StartBoardRotation());
        // StartCoroutine(LockOutRotationButton());
     }
